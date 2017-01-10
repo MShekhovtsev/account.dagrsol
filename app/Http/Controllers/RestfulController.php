@@ -15,9 +15,10 @@ use Kris\LaravelFormBuilder\FormBuilderTrait;
  */
 class RestfulController extends MasterController
 {
-    public function __construct()
-    {
 
+    public function __construct($model = null)
+    {
+        $this->model = $model;
     }
 
     public function get($model){

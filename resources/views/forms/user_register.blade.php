@@ -1,4 +1,4 @@
-{!! Form::model($model) !!}
+{!! Form::open() !!}
 
 
 <div class="form-group">
@@ -26,7 +26,11 @@
     {!! Form::password('password_confirmation') !!}
 </div>
 
-{!! Form::submit() !!}
+<div class="form-group">
+    {!! Form::label('') !!}
+    {!! Form::submit() !!}
+</div>
+
 
 
 {!! Form::close() !!}

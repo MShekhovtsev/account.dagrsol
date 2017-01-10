@@ -28,7 +28,7 @@ class User extends MasterModel implements AuthenticatableContract, AuthorizableC
     public $validationRules = [
         'firstname' => 'required',
         'lastname' => 'required',
-        'email' => 'required|unique:users',
+        'email' => 'required|unique:users'
     ];
 
     /**
@@ -54,7 +54,17 @@ class User extends MasterModel implements AuthenticatableContract, AuthorizableC
     }
 
     public function setPasswordAttribute($password){
-        $this->attributes['password'] = bcrypt($password);
+        $this->attributes['password'] = $password ? bcrypt($password) : "";
+    }
+
+
+    //Relations
+    public function roles(){
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function permissions(){
+        return $this->hasManyThrough(Permission::class, 'roles');
     }
 
 

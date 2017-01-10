@@ -169,7 +169,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        App\Libraries\FormValidator\ServiceProvider::class,
+        App\Libraries\FormBuilder\ServiceProvider::class,
         //
 
         /*
@@ -230,7 +230,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
 
-        'Form' => App\Libraries\FormValidator\Facade::class,
+        'Form' => App\Libraries\FormBuilder\Facade::class,
         'Html' => Collective\Html\HtmlFacade::class
     ],
 

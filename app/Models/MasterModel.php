@@ -15,6 +15,7 @@ class MasterModel extends Model
 {
     public $classname;
 
+    protected $formData = [];
     protected $relationsData = [];
 
     public $validationRules = [];
@@ -46,6 +47,8 @@ class MasterModel extends Model
 
     public function fill(array $attributes)
     {
+        $this->formData = $attributes;
+
         if($attributes){
             foreach ($attributes as $key => $data) {
 
@@ -110,7 +113,6 @@ class MasterModel extends Model
                 }
             }
         }
-
     }
 
     public function validate($data){
@@ -127,7 +129,7 @@ class MasterModel extends Model
 
     public function save(array $options = array())
     {
-        $attributes = array_merge($this->attributes, $options);
+        $attributes = array_merge($this->formData, $options);
 
         $valid = $this->validate($attributes);
 

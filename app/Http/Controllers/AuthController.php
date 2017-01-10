@@ -19,8 +19,16 @@ class AuthController extends MasterController
     }
 
     public function getRegister(){
-        $this->user->validationRules['password'] = 'required|confirmed';
         return $this->render('auth.register');
+    }
+
+    public function postRegister(Request $request){
+
+        $this->user->validationRules['password'] = 'required|confirmed';
+
+        $this->validate($request, $this->user->validationRules);
+
+        $newUser = $this->user->create($request->all());
     }
 
     public function postLogin(Request $request){

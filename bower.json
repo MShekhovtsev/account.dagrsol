@@ -6,7 +6,7 @@
     "Maxym Shekhovtsev <m.shehovtsev@gmail.com>"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/MShekhovtsev/account.dagrsol",
   "private": true,
   "ignore": [
     "**/.*",

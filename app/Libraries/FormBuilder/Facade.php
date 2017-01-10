@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Libraries\FormValidator;
+namespace App\Libraries\FormBuilder;
 
 use Illuminate\Support\Facades\Facade as IlluminateFacade;
 
@@ -11,6 +11,6 @@ class Facade extends IlluminateFacade {
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'formvalidator'; }
+    protected static function getFacadeAccessor() { return 'formbuilder'; }
 
 }
